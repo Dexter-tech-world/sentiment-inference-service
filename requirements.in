@@ -1,0 +1,5 @@
+# Top-level runtime dependencies. Edit this file, then regenerate the lock:
+#   make lock
+torch==2.5.1
+transformers==4.46.3
+prometheus-client==0.21.1

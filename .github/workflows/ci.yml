@@ -1,0 +1,65 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements-dev.txt
+      - run: pip install -r requirements-dev.txt && pip install --no-deps -e .
+      - run: ruff check . && ruff format --check .
+      - run: pytest
+      - name: Lockfile is in sync with requirements.in
+        run: |
+          pip install uv==0.13.1
+          make lock
+          git diff --exit-code requirements.lock
+
+  docker:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: docker/setup-buildx-action@v3
+      - uses: docker/build-push-action@v6
+        with:
+          context: .
+          load: true
+          tags: sentiment-pipeline:ci
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      - name: Smoke test on UCI data (end to end, real model, offline)
+        run: |
+          mkdir -p out
+          docker run --rm --network none --read-only --tmpfs /tmp --user "$(id -u):$(id -g)" \
+            -v "$PWD/data:/data:ro" -v "$PWD/out:/output" sentiment-pipeline:ci \
+            --input /data/uci_sentences.csv --output /output/predictions.csv \
+            --id-column id --label-column label
+          jq . out/predictions.metrics.json
+          # Guards against a broken model, a changed pin, or a label-mapping bug.
+          jq -e '.status == "completed" and .rows_read == 3000 and .accuracy >= 0.9' \
+            out/predictions.metrics.json
+          # Same input + same pinned model => same predictions as the committed reference.
+          python3 scripts/compare_predictions.py output/predictions.csv out/predictions.csv
+
+      - name: Edge cases exit 2 (failure rate above threshold) but still publish output
+        run: |
+          set +e
+          docker run --rm --network none --user "$(id -u):$(id -g)" \
+            -v "$PWD/data:/data:ro" -v "$PWD/out:/output" sentiment-pipeline:ci \
+            --input /data/edge_cases.csv --output /output/edge.csv --id-column id
+          code=$?
+          set -e
+          test "$code" -eq 2
+          test -f out/edge.csv
+          jq -e '.rows_failed == 3 and .failures_by_reason.empty_text == 2' out/edge.metrics.json
