@@ -215,7 +215,7 @@ row_number,id,text,label,predicted_label,score,status,error
 214,2211961913,@0ddS0cksMyElb0w aww thats crap  my 16th  in october but i cba doing anything for it lol,negative,negative,0.9989,ok,
 215,2071013236,@missxisxhere Lol yeah. Its supposed to be when someone doesnt update for a long time ,positive,negative,0.9975,ok,
 216,1985995934,School ends this week. My last year of elemantary ,negative,negative,0.884,ok,
-217,1794014766,barusan impulsive shopping di Crayon&amp;co. beli jarum dan benang rajut yeaaaaahhh ,positive,negative,0.9945,ok,
+217,1794014766,barusan impulsive shopping di Crayon&amp;co. beli jarum dan benang rajut yeaaaaahhh ,positive,,,failed,"non_english: detected 'id', P(English)=0.0042"
 218,2001932605,"multiply, wordpress/blogspot and TWITTER FOREVER!!! i think i'm going to leave facebook soon.. didn't like it ",negative,negative,0.9993,ok,
 219,1834652040,@Rawrrgasmic Well you need to be where you are happiest. ,positive,negative,0.9732,ok,
 220,1966465218,@ShinRa_Reno I think they went to bed... some of them together ,positive,negative,0.9882,ok,
@@ -1197,7 +1197,7 @@ row_number,id,text,label,predicted_label,score,status,error
 1196,1685354932,Still doing the research  i wana sleep now ,negative,negative,0.9968,ok,
 1197,1834301726,has very tired eyes. :'-( ahhhhh CVS. X-(  http://plurk.com/p/uipah,negative,negative,0.9997,ok,
 1198,2295755152,"Quote from one of my friends on Facebook: &quot;Can't wait for the John and Kate custody draft.&quot; He's so mean, but um, he may be right ",negative,negative,0.9846,ok,
-1199,2264504198,"Dáº¡o nÃ y náº¯ng nÃ³ng, ÄÃ´i lÃºc mÃ¬nh nÃ³ng náº£y má»t cÃ¡ch vÃ´ cá». Biáº¿t mÃ  khÃ´ng lÃ m tháº¿ nÃ o Äc. ",negative,negative,0.9853,ok,
+1199,2264504198,"Dáº¡o nÃ y náº¯ng nÃ³ng, ÄÃ´i lÃºc mÃ¬nh nÃ³ng náº£y má»t cÃ¡ch vÃ´ cá». Biáº¿t mÃ  khÃ´ng lÃ m tháº¿ nÃ o Äc. ",negative,,,failed,"non_english: detected 'vi', P(English)=0.0000"
 1200,2246309551,"finally has her cat back, but he's still sick ",negative,negative,0.9971,ok,
 1201,2000513192,Oh yeah. Want proof that we are amidst a recession? There were actually several $10 blackjack tables at Bellagio. Hard times.. ,negative,negative,0.9971,ok,
 1202,2188651387,@KarlRove your right....I hadn't considered a few of those thank you ,positive,positive,0.9979,ok,
@@ -2637,7 +2637,7 @@ row_number,id,text,label,predicted_label,score,status,error
 2636,1989825352,"getting ready for school, uh oh my throat is sore ",negative,negative,0.9982,ok,
 2637,2252416593,My colds/allergy/chronic illness is killing me! Homeworks aren't done yet... I'm not in a good mood. ,negative,negative,0.9998,ok,
 2638,2255345025,Can't believe the last day of school was yesterday. i cried ,negative,negative,0.9329,ok,
-2639,2324792922,"@echa_xoxo oh, hehe. Tp itu kurang bagus ",negative,negative,0.9944,ok,
+2639,2324792922,"@echa_xoxo oh, hehe. Tp itu kurang bagus ",negative,,,failed,"non_english: detected 'id', P(English)=0.0003"
 2640,2193498130,"@marissedeleon i know. i'm so pissed! ugh, they won't let me go to school.  monday pa! i'll call you tom. update me! )",negative,negative,0.5664,ok,
 2641,1971603036,running on 3 hours sleep &amp; red bull! refusing to nap before i go out as i can make the most of lazy sunday ,positive,negative,0.9909,ok,
 2642,1557570250,"Uh oh, flight's cancelled. Now on hold with Continental - wait time = 15 -20 min. ",negative,negative,0.9995,ok,
@@ -4117,7 +4117,7 @@ row_number,id,text,label,predicted_label,score,status,error
 4116,1964690311,"Hey, @elliotcole Thank you SO much for the #followfriday. I failed miserably to get a list together this week ",negative,negative,0.9976,ok,
 4117,1978274479,@JanayS Oh now how could anyone resist that LOL  xoxo,positive,negative,0.7764,ok,
 4118,1970370138,@TheChristinaKim Good Morning CK! Wow your in charlotte  thats where I lived for the past 5 years  went to UNCC ,positive,positive,0.9984,ok,
-4119,1693434309,"em ch?a bi?t m?t ?i?u gï¿½ c?, nh?ng em mong trong chuy?n nï¿½y, s?p t?i em s? ??i ???c k?t qu? xï¿½c ?ï¿½ng ",positive,negative,0.994,ok,
+4119,1693434309,"em ch?a bi?t m?t ?i?u gï¿½ c?, nh?ng em mong trong chuy?n nï¿½y, s?p t?i em s? ??i ???c k?t qu? xï¿½c ?ï¿½ng ",positive,,,failed,"non_english: detected 'vi', P(English)=0.0012"
 4120,1770778397,"Watching the HGTV channel, because I can't figure out the tv here.... ",positive,negative,0.9986,ok,
 4121,1794620347,"Feeling a little better today... And the manicure that my mom tried to cheer me up w yday is helping, a nice red/orange color ",positive,positive,0.9992,ok,
 4122,2194011973,@maddmanphilly ,negative,positive,0.7389,ok,
@@ -4209,7 +4209,7 @@ row_number,id,text,label,predicted_label,score,status,error
 4208,1557014357,"@fiona2369 u like to run dont u, wish i was like u, i struggle to run at all ",negative,negative,0.9943,ok,
 4209,2190648124,..as always.. doing my homework..  eerRhh!.. :p,negative,positive,0.826,ok,
 4210,1976221887,"@charlestrippy I don't thinlk all cops are like that...at least I hope not. If they were, I'd be extremely dissapointed in my aunts ",negative,negative,0.9895,ok,
-4211,2064373044,@Ahmad_Alharthi  Ø³Ø¨Ø­Ø§Ù Ø§ÙÙÙ ÙØ£ÙÙ Ø¹ÙØ¯Ù Ø¥Ø­Ø³Ø§Ø³ .. &lt;&lt;&lt; Ø§ÙØ§ ÙØ³ÙØ¹ ÙØ§Ù Ø¨ÙØ¬Ù Ø¨Ø·ÙØ§Ø±Ø© ,positive,negative,0.9517,ok,
+4211,2064373044,@Ahmad_Alharthi  Ø³Ø¨Ø­Ø§Ù Ø§ÙÙÙ ÙØ£ÙÙ Ø¹ÙØ¯Ù Ø¥Ø­Ø³Ø§Ø³ .. &lt;&lt;&lt; Ø§ÙØ§ ÙØ³ÙØ¹ ÙØ§Ù Ø¨ÙØ¬Ù Ø¨Ø·ÙØ§Ø±Ø© ,positive,,,failed,"non_english: detected 'da', P(English)=0.0093"
 4212,1980578222,wanting to go back to bed  ,negative,negative,0.9938,ok,
 4213,2188229221,@caycekane @Pam_jo -  Thanks for confirming what I was thinking? Best to ya,positive,positive,0.9969,ok,
 4214,1752474736,can't wait to watch the next season of heroes ,positive,positive,0.9987,ok,
@@ -4239,7 +4239,7 @@ row_number,id,text,label,predicted_label,score,status,error
 4238,1792004825,Off to bed! G'night to all ,positive,positive,0.9789,ok,
 4239,2032748160,"is going for a 3.5 hour car ride to New Hampshire tomorrow to see NIN, then take the same ride back. Thank god for POKEMON! ",positive,positive,0.9993,ok,
 4240,2051667532,@boondocksaint1 I miss u too ,negative,negative,0.9859,ok,
-4241,2039842385,"@dynaatthedisco wiwiwiiwiw makasih yah, tunggu aja nanti lagu baru nya kalo sudah rapih di mixing pasti di upload di myspace nya thirteen ",positive,negative,0.9934,ok,
+4241,2039842385,"@dynaatthedisco wiwiwiiwiw makasih yah, tunggu aja nanti lagu baru nya kalo sudah rapih di mixing pasti di upload di myspace nya thirteen ",positive,,,failed,"non_english: detected 'id', P(English)=0.0000"
 4242,1678816274,I am SO excited for today.  waking up with a smile on my face because it's FREE COMIC BOOK DAY!!!!!,positive,positive,0.9997,ok,
 4243,2219594700,"@olivia_15 Awww  Well don't worry, you're not missing much in maths because we don't learn anything. Haha.",negative,negative,0.9867,ok,
 4244,2323286519,@ruhi So no I 20 yet..  and can't see any in the next 30 days...,negative,negative,0.9983,ok,
@@ -4628,7 +4628,7 @@ row_number,id,text,label,predicted_label,score,status,error
 4627,2233359896,"Kind of depressed that I will be waiting until December, when I can upgrade, to get the iPhone 3G S ",negative,negative,0.9997,ok,
 4628,1978272921,"@jessicalmoreau I cheched for ya - Of women who do develop breast cancer, most do not have a family history of the disease. ",positive,negative,0.9946,ok,
 4629,1982313552,@tomsgal Your welcome hun  XX,positive,positive,0.9939,ok,
-4630,2052561799,"Yess, akhirnya permohonan cicilan disetujui BTN!!  wkt itu iseng2 ikutan ngambil Apartment Subsidi-programnya pak JK.",positive,negative,0.9827,ok,
+4630,2052561799,"Yess, akhirnya permohonan cicilan disetujui BTN!!  wkt itu iseng2 ikutan ngambil Apartment Subsidi-programnya pak JK.",positive,,,failed,"non_english: detected 'id', P(English)=0.0000"
 4631,2200218154,Drownededed ,negative,negative,0.9996,ok,
 4632,2236650764,wont to chance the song my mum will not let me ,negative,positive,0.9997,ok,
 4633,1553082237,@comeagainjen I am jealous.I can't wait to see Disney Earth on Wednesday...it looks really cool.Animals on a large screen.awesome. ,positive,positive,0.9997,ok,
@@ -6027,7 +6027,7 @@ row_number,id,text,label,predicted_label,score,status,error
 6026,1754328951,Im so bored. I should be sleeping but...i kinda slept all day today :S lol and i have school  so uncool!,negative,negative,0.999,ok,
 6027,2060597963,is watching Titanic. That is my SHIETTTT ,positive,negative,0.8741,ok,
 6028,2051196638,Tweet Testing 1.2.3 Tweet Testing 1.2.3  it works....,positive,positive,0.9953,ok,
-6029,2057906331,"HÃ?  1Âº POST NO TWITTER   HOJE FUI NO BALLON WATER MAIS FUI SÃ NO 1Âº ROUND, FOI UMA DROGA --'",positive,negative,0.9986,ok,
+6029,2057906331,"HÃ?  1Âº POST NO TWITTER   HOJE FUI NO BALLON WATER MAIS FUI SÃ NO 1Âº ROUND, FOI UMA DROGA --'",positive,,,failed,"non_english: detected 'pt', P(English)=0.0009"
 6030,1985002533,just got twitter set up  - about time! and also from the phone,positive,negative,0.9757,ok,
 6031,1984070848,laying out ,positive,positive,0.9955,ok,
 6032,1822936420,"@OriginalOG weather is very wet, thunder storms and about 15 degrees Celcius today crappy seeing as it is our long weekend ",negative,negative,0.9988,ok,
@@ -6128,7 +6128,7 @@ row_number,id,text,label,predicted_label,score,status,error
 6127,1685964507,@shrinkwithme are you allowed to work other health product while with usana? are you allowed to sell to stores? look forward to tweeting ,positive,negative,0.9741,ok,
 6128,1980523032,one of my best friend is going through mental disaster... can't find any word powerful enough to console him... feeling so hopeless... !! ,negative,negative,0.9997,ok,
 6129,2064107767,http://tinyurl.com/lruaoc for poker offers and sign up bonus offers.  also hope to see you at our game on Everest poker tonight.,positive,positive,0.9984,ok,
-6130,1752251301,@alyshachandra hehehe me 2 nih lyshhhh @zanidia iya pake udang? Aku taunya cmn pake ayam gitu niiiiid @clarixxxa TPKEANYAGKJADI ,negative,negative,0.9871,ok,
+6130,1752251301,@alyshachandra hehehe me 2 nih lyshhhh @zanidia iya pake udang? Aku taunya cmn pake ayam gitu niiiiid @clarixxxa TPKEANYAGKJADI ,negative,,,failed,"non_english: detected 'id', P(English)=0.0002"
 6131,2175010514,"@sishizaki tweet w/ me, I should be up for a while... ",positive,negative,0.8961,ok,
 6132,1971244930,boo people who willingly wake up early to do things. yuck. ,positive,negative,0.9896,ok,
 6133,1679380760,Moving is about as fun as sleeping on a shitty futon. HA ,negative,negative,0.9988,ok,
@@ -6554,7 +6554,7 @@ row_number,id,text,label,predicted_label,score,status,error
 6553,2300096154,At a stand still  And I don't know what direction to turn to ,negative,negative,0.9995,ok,
 6554,2203810798,"@TerriNixon Ankle is bad today, then? ",negative,negative,0.9995,ok,
 6555,1969754738,Pancake puppies ,positive,negative,0.7627,ok,
-6556,2013498780,@ripplemelo e ainda tÃ¡ longe de unity ,negative,positive,0.6162,ok,
+6556,2013498780,@ripplemelo e ainda tÃ¡ longe de unity ,negative,,,failed,"non_english: detected 'pt', P(English)=0.0029"
 6557,2066846609,@ifew have you been there? : -) good place for yakiniku na ,positive,positive,0.9955,ok,
 6558,1958113205,"p.s. did i tell you that we have the album title?? The day we ran into the sea.   ...aahh well, time for work.",positive,negative,0.9977,ok,
 6559,1548556560,"@exohmiamore i like twitter  i have no idea what im doing tonight, maybe watch a movie or read some john piper. how was datenite? ",positive,negative,0.9985,ok,
@@ -6935,7 +6935,7 @@ row_number,id,text,label,predicted_label,score,status,error
 6934,2184481377,Jogging on the treadmill is making my leg sore between my achilles &amp; my calf. Stretches don't really work. Anyone have suggestions? ,negative,negative,0.9996,ok,
 6935,1692178589,"@takahashim Have you really get the book? I have requested to amazon.co.jp, but no response has come yet. I'm looking forward to read it. ",positive,positive,0.9977,ok,
 6936,1677926453,Haha! I finally got to post my AMV for Death Note!!!  http://tinyurl.com/d4ewuq,positive,negative,0.6493,ok,
-6937,2194053404,@m_destruction uuuuhhhhhhh anche io gelato ,negative,negative,0.9962,ok,
+6937,2194053404,@m_destruction uuuuhhhhhhh anche io gelato ,negative,,,failed,"non_english: detected 'it', P(English)=0.0049"
 6938,1974445441,"dec just registered my diversity vote  feel better now i've voted tiwce haha. oh and my mum voted stavros flatley, love diversity more tho",positive,positive,0.9855,ok,
 6939,1985930456,"@etwon_jenn im from ajax, ontario  STEREOS is just amazing. i dno know y tho.. lmao",negative,positive,0.9995,ok,
 6940,2070984956,"I want a band  I'd like to be on tour every month! Fans. Touring with my favorite bands! Whooa! On tour with CS, Cash Cash &amp; FTSK! *dream*",negative,positive,0.9987,ok,
@@ -7030,7 +7030,7 @@ row_number,id,text,label,predicted_label,score,status,error
 7029,1996174000,"is for some reason, content and happy ",positive,positive,0.9999,ok,
 7030,2323571611,"@mcm180 Wow that must be pretty stressful for you. No wonder you want to work out after work, relieve some stress/tension! ",negative,positive,0.986,ok,
 7031,1980110884,"Thanks to everyone who offered their moving skills, but we finally finished 15 hours later.  @jeja6 so sore, stretching didn't work ",negative,negative,0.9995,ok,
-7032,2254898390,cand vroiam sa ies si eu cu bicicleta a inceput sa ploua... ,negative,negative,0.9879,ok,
+7032,2254898390,cand vroiam sa ies si eu cu bicicleta a inceput sa ploua... ,negative,,,failed,"non_english: detected 'fr', P(English)=0.0074"
 7033,2234908716,"great, sick before the big day ",negative,negative,0.9649,ok,
 7034,2262258819,"@mrdinosaur It's not looking likely, but I really really want to go ",negative,positive,0.9987,ok,
 7035,2225829804,had a bloody awful day and is now cold and tired ,negative,negative,0.9998,ok,
@@ -7391,7 +7391,7 @@ row_number,id,text,label,predicted_label,score,status,error
 7390,2220621596,@lalalacarrie that's what she said ,negative,positive,0.9941,ok,
 7391,2326510815,@DREEE9 my throat killllsssssssss &amp; i lost my voice.. kill me lol ,negative,negative,0.9998,ok,
 7392,1979933626,Ok sorry lol the Hills finale is BEFORE the awards ahahha my bad ,positive,negative,0.998,ok,
-7393,2060692603,@N3t4 invita las chelasssssssssssss ,negative,negative,0.9775,ok,
+7393,2060692603,@N3t4 invita las chelasssssssssssss ,negative,,,failed,"non_english: detected 'es', P(English)=0.0060"
 7394,1559873581,at my sister's dance recital  GO RU!,positive,positive,0.9297,ok,
 7395,1679344270,@jordanknight It's not there anymore.  ,negative,negative,0.9997,ok,
 7396,1998793333,#mw2 MFG WHEN will the 2 maps come out  tell me so i will be the 1st 1 to get it,negative,negative,0.9732,ok,
@@ -8552,7 +8552,7 @@ row_number,id,text,label,predicted_label,score,status,error
 8551,2230389557,Last night in Austin! Sad ,negative,negative,0.9966,ok,
 8552,2053065394,@neondeception me too  u done with work?,negative,negative,0.997,ok,
 8553,2059247195,"@emmalouisecooke Same, not sure if it suits me, bought Mac's &quot;Russian Red&quot; and was getting right into it then left it on the train ",negative,negative,0.9982,ok,
-8554,1982018036,@blondzilla90 jaaah monica ist super aber chandler ist der beeeeeste  ach alle sind super ,positive,negative,0.9918,ok,
+8554,1982018036,@blondzilla90 jaaah monica ist super aber chandler ist der beeeeeste  ach alle sind super ,positive,,,failed,"non_english: detected 'de', P(English)=0.0028"
 8555,1686614074,I wish my wife did not have to drive back to Georgia today ,negative,negative,0.7021,ok,
 8556,1956204866,@LegendaryWriter ok i dont see it.... ,negative,negative,0.987,ok,
 8557,1771161270,cant wait for blink 182 to come back&lt;333 hungry for taco bell. chargin ipod. being inspired! wanna live my dreaaammmss  goodnight,positive,negative,0.9881,ok,
@@ -9130,7 +9130,7 @@ row_number,id,text,label,predicted_label,score,status,error
 9129,1989991335,"@ashinynewcoin I mean, fingers crossed you *don't* of course. ",positive,negative,0.962,ok,
 9130,2252556675,ouch.. headache.. ,negative,negative,0.9997,ok,
 9131,2064631485,is still tired and still needs $300 for my carnote... ,negative,negative,0.9996,ok,
-9132,1983952487,Creando el DrenellyOS ,negative,negative,0.9702,ok,
+9132,1983952487,Creando el DrenellyOS ,negative,,,failed,"non_english: detected 'es', P(English)=0.0065"
 9133,2192081001,"@phorrest Well if I'm going to block them, I may as well soften the blow by saying hello first! ",positive,negative,0.9109,ok,
 9134,2044525052,"CLUB {V} tongiht, text me for guest list ",positive,negative,0.976,ok,
 9135,1957283025,@oxygen8705 aww ty! s'just a bummer watching conversations ,negative,negative,0.998,ok,
@@ -9623,7 +9623,7 @@ row_number,id,text,label,predicted_label,score,status,error
 9622,2003592640,@Josh_Milliken HAPPY BRITHDAYY (again).. Donât be upset itâs a time to celebrate// and getting older is awesome!! (: BE HAPPY  ,positive,positive,0.9997,ok,
 9623,1554108538,@nhmacomber its comin on sky movies! ,positive,negative,0.9239,ok,
 9624,2234896458,"@peterfacinelli  im sorry about the bet. If I could follow you 250,000 more times I would",negative,negative,0.9996,ok,
-9625,2065785358,"Mac...  Buralardayim, arayabilirsin gelince..",positive,negative,0.9481,ok,
+9625,2065785358,"Mac...  Buralardayim, arayabilirsin gelince..",positive,,,failed,"non_english: detected 'tr', P(English)=0.0005"
 9626,2185699962,Bar vote made me turn off Intervention ,negative,negative,0.9911,ok,
 9627,2302861546,out of work! haning out with dan...then bed because i work at 7am ,negative,negative,0.9931,ok,
 9628,1751886143,One taken from earlier this week!  http://twitpic.com/4wb42,positive,negative,0.997,ok,
@@ -10291,7 +10291,7 @@ row_number,id,text,label,predicted_label,score,status,error
 10290,1686154540,Danny is an awesome singer. I want him to win over Adam but I think we all know whos gunna win it in the end ,negative,positive,0.9991,ok,
 10291,1967906362,WOOOOOOO!!!!  Lakers heading to the FINALS!  soooo hyped.  ,positive,positive,0.9621,ok,
 10292,2175395212,Happy flowery a flowery dress day ,positive,positive,0.9999,ok,
-10293,1677127197,Vua ve - Dang giai quyet hau qua Dan de lai  - Giat giu va phoi phong lien tuc trong 2 tieng tiep theo!,negative,positive,0.5235,ok,
+10293,1677127197,Vua ve - Dang giai quyet hau qua Dan de lai  - Giat giu va phoi phong lien tuc trong 2 tieng tiep theo!,negative,,,failed,"non_english: detected 'vi', P(English)=0.0019"
 10294,2055210541,I don't want to get up yet. But it's 11. ,negative,positive,0.9808,ok,
 10295,2259615632,@RaziyeS That was the saddest thing I've ever seen  ,negative,negative,0.9991,ok,
 10296,1557617685,let the pink fluffy bunnies start rolling down the hill. well thats what goes o in my head. back to college tommorow. ,negative,negative,0.9876,ok,
@@ -10574,7 +10574,7 @@ row_number,id,text,label,predicted_label,score,status,error
 10573,2000889583,Damn I love that TV Spot so much!!! Hard to believe that I made it  ,positive,positive,0.9998,ok,
 10574,1686072990,"Today is pocket money day, as they are still very young have said ï¿½5 each a month, performance related ..  so this month only ï¿½3.50 each",positive,negative,0.994,ok,
 10575,1970975442,Morning. Power is out which means no coffee ,negative,negative,0.9987,ok,
-10576,1990643475,@msiou &quot;@ledretch approved!&quot; ou &quot;validÃ© par @ledretch&quot; tu fais le stamp!? ,positive,negative,0.9057,ok,
+10576,1990643475,@msiou &quot;@ledretch approved!&quot; ou &quot;validÃ© par @ledretch&quot; tu fais le stamp!? ,positive,,,failed,"non_english: detected 'fr', P(English)=0.0020"
 10577,1754596444,"If anyone sees my mother today, give her a hug for me...I can't be there.. ",negative,negative,0.9904,ok,
 10578,1793569680,Mum just came into work with shoes n a bag for the wedding tomorrow. Yay no frantic shopping after work ,positive,positive,0.8385,ok,
 10579,1975369381,@kayluh23 whats going onnn. I forgot you posted on my fb walll ,negative,negative,0.994,ok,
@@ -12893,7 +12893,7 @@ row_number,id,text,label,predicted_label,score,status,error
 12892,2015585866,@Roxxie_01 how is your adventure into the world of Twitter going so far? Making more sense? ,positive,negative,0.9968,ok,
 12893,1993287698,@OCRobG better now. rested  how are you?,positive,negative,0.9585,ok,
 12894,1979294100,@meldraythecool na not able to choose schools getting a full time pe teaching job is hard straight out of uni  maybe though if i go well,negative,negative,0.9985,ok,
-12895,1880896604,@kNugroho ya udah...have fun trus tolong coba tulis artikelnya ya dikit2 ,positive,negative,0.8252,ok,
+12895,1880896604,@kNugroho ya udah...have fun trus tolong coba tulis artikelnya ya dikit2 ,positive,,,failed,"non_english: detected 'id', P(English)=0.0036"
 12896,2247856788,@JulsAndrade wish I could help you guys  effin sucks though,negative,negative,0.9976,ok,
 12897,2188303370,is wondering whether the two hours of commute (including 100 bux of ric) is really worth the time...thats wat I am using life for ,positive,negative,0.9988,ok,
 12898,1557190462,"@igottaheadache you be fine, sleep is overated anyway ",positive,negative,0.9944,ok,
@@ -13575,7 +13575,7 @@ row_number,id,text,label,predicted_label,score,status,error
 13574,2000710007,@lalavazquez twitpic please!! share the laughter with ur fam!! ,positive,positive,0.9954,ok,
 13575,2247441277,@SnowVsAsphalt oh my. Eek.  Sorry to hear that.,negative,negative,0.9987,ok,
 13576,1759199835,@aedrian_shaene okay rub it again why don't you ,positive,negative,0.9971,ok,
-13577,1792936605,masih sedikit canggung menggunakan twitter...new tweet ,positive,negative,0.9892,ok,
+13577,1792936605,masih sedikit canggung menggunakan twitter...new tweet ,positive,,,failed,"non_english: detected 'id', P(English)=0.0000"
 13578,1678033317,Ugggggg.  Just woke up sooooo early!!!!  Excited to see my lady today!!!!    ,positive,positive,0.9965,ok,
 13579,2322559376,Can't fall asleep. Which sucks cas works tomarrow at 8:30. ,negative,positive,0.9964,ok,
 13580,2068681281,@davengeo mass culture worked very hard producing the images of good guys smashing bad alien guys.seems like many took it too literally ,negative,negative,0.9979,ok,
@@ -13687,7 +13687,7 @@ row_number,id,text,label,predicted_label,score,status,error
 13686,2054197495,"Finally arrived in 6 Flags! Passed WaWa, though. ",negative,positive,0.8362,ok,
 13687,2219590895,"thinking about North Korea and other (semi) closed regimes and the level of brain-washing,control and,repression people there live under! ",negative,positive,0.9868,ok,
 13688,2187198121,@danielklotz Did everyone decide that Thursdays are the best for these?  I always work Thursday mornings. ,negative,negative,0.8525,ok,
-13689,1687331167,Xa nhï¿½ thï¿½ khï¿½ng ???c ?mï¿½  Khï¿½ng mu?n ?m n?a ?ï¿½u huhu.Th? vi?t trong ngï¿½y ?m: http://my.opera.com/hoangyenanh/blog/,negative,negative,0.9937,ok,
+13689,1687331167,Xa nhï¿½ thï¿½ khï¿½ng ???c ?mï¿½  Khï¿½ng mu?n ?m n?a ?ï¿½u huhu.Th? vi?t trong ngï¿½y ?m: http://my.opera.com/hoangyenanh/blog/,negative,,,failed,"non_english: detected 'vi', P(English)=0.0010"
 13690,1994725892,Eating the rice I was cook  and it's actually cooked!!! xD,positive,positive,0.9996,ok,
 13691,1972970687,"@TomFelton congratulations on a sunny day. say hello for me, dearie. ",positive,positive,0.9998,ok,
 13692,1975925209,shooting some threes in about 55 minutes. I have a sorry ads free throw ,negative,negative,0.9984,ok,
@@ -15340,7 +15340,7 @@ row_number,id,text,label,predicted_label,score,status,error
 15339,2017087251,"@Ali_Sweeney I watch Days every day.    Straight, for at least the last four years!",positive,positive,0.8439,ok,
 15340,1833477756,"7:30 Monday morning, back at work again ",negative,negative,0.92,ok,
 15341,1989318001,"'The sun is in the sky, oh why oh why would I wanna be anywhere else...' @lilyroseallen ",positive,positive,0.9787,ok,
-15342,1694543853,@summerdew on voit pas grand chose ,negative,positive,0.9696,ok,
+15342,1694543853,@summerdew on voit pas grand chose ,negative,,,failed,"non_english: detected 'fr', P(English)=0.0046"
 15343,2237036551,Last day of school today. ,negative,positive,0.9429,ok,
 15344,2013779056,"@teemwilliams Hey, Michelle! Good night. The Ladies won the game 102 to 55. ",positive,positive,0.9997,ok,
 15345,2039897977,"@xynthian he he, like your behind the scenes pic's! ",positive,positive,0.9982,ok,
@@ -15743,7 +15743,7 @@ row_number,id,text,label,predicted_label,score,status,error
 15742,1999947428,writing and eating kettle corn  yummy,positive,negative,0.9416,ok,
 15743,2301962954,"@RealLamarOdom I miss the Lakers already  Don't know what to do with myself. Get your vacay time in, and Hurry back!",negative,negative,0.9987,ok,
 15744,2260142068,feels really bad for Kasey.  Why do customers have to be dicks to my favourite supervisor?,negative,negative,0.9997,ok,
-15745,1685151142,@justsel sao khï¿½ng ?? hï¿½nh hï¿½m qua ?i ch?i  Mï¿½ pï¿½ T ?ï¿½u r?i? ?i nhï¿½ th? v? ch?a em?,positive,negative,0.9912,ok,
+15745,1685151142,@justsel sao khï¿½ng ?? hï¿½nh hï¿½m qua ?i ch?i  Mï¿½ pï¿½ T ?ï¿½u r?i? ?i nhï¿½ th? v? ch?a em?,positive,,,failed,"non_english: detected 'vi', P(English)=0.0003"
 15746,1978695509,"@_helloheart Hahaha.LOL..Boring na eh..BTW, how do you unfollow people? ",positive,negative,0.9986,ok,
 15747,2004669797,@UrmiRaj14 kebabs are awesome...for everything except my health ,negative,positive,0.9998,ok,
 15748,1555961028,@marcelatc I'm still in the dencing mood after sleepless night  #asot400,positive,negative,0.9525,ok,
@@ -15918,7 +15918,7 @@ row_number,id,text,label,predicted_label,score,status,error
 15917,1992108544,in com-tech class making a movie trailer ,positive,negative,0.984,ok,
 15918,2189629076,"@carlitosmum Ohh lush. My Nan lives down in Devon, East Allington (near Totnes) ",positive,positive,0.9922,ok,
 15919,2016739473,@texasmommy77  what do you take in yours? How is your week so far?  http://myloc.me/2sI7,positive,negative,0.9925,ok,
-15920,2190834694,"@manhnd Anh thÃ¬ Äau cÆ¡ mÃ´ng, má»?i cÆ¡ gá»i, nhá»©c cÆ¡ ÄÃ¹i. ",negative,negative,0.9869,ok,
+15920,2190834694,"@manhnd Anh thÃ¬ Äau cÆ¡ mÃ´ng, má»?i cÆ¡ gá»i, nhá»©c cÆ¡ ÄÃ¹i. ",negative,,,failed,"non_english: detected 'vi', P(English)=0.0000"
 15921,1971345907,@samlevysam Loop seven oficially amends our last tweet to include friends and visitors ,positive,negative,0.8043,ok,
 15922,1962242761,#followfriday These peeps are awesome! @buzzedition @lotay @bassyc @amous @vivspace @baros @williambay @yuriarcurs follow cause I say so! ,positive,positive,0.9977,ok,
 15923,1969774853,"@tophatdog Aww.A greyhound?!That's so cool  It's lovely that you have such a connection with animals,you're getting into the perfect biz!",positive,positive,0.9998,ok,
@@ -16255,7 +16255,7 @@ row_number,id,text,label,predicted_label,score,status,error
 16254,1979723958,Song I am enjoying right now. Luckily anyone who normally would make fun of me is still sleeping  http://tinyurl.com/nldwqy,positive,positive,0.9611,ok,
 16255,1793332398,@sashasayssashay hahaha hilarious! ,positive,positive,0.9997,ok,
 16256,2016500086,my bday today...most i can hope for is to have a great day...and avoid getting drunk...really not looking forward to law exam results... ,negative,positive,0.7188,ok,
-16257,1880588674,@callmelivi Nein hat da etwas jemand Germanys next Topmodel geguckt ...das ist ja echt geil ,positive,positive,0.7467,ok,
+16257,1880588674,@callmelivi Nein hat da etwas jemand Germanys next Topmodel geguckt ...das ist ja echt geil ,positive,,,failed,"non_english: detected 'de', P(English)=0.0001"
 16258,2015706567,@blayze316 I fell asleep before Conan came on last night! ,negative,negative,0.9894,ok,
 16259,1755237521,"@EvilNanny don't think I'd have the energy to last 90mins, plu I'm a goalie so I can't blow my nose during the game ",negative,negative,0.9697,ok,
 16260,1965769739,"Jumped in the pool, Shower, And out with mommy's friends to drink =P Text ",positive,negative,0.6063,ok,
@@ -16944,7 +16944,7 @@ row_number,id,text,label,predicted_label,score,status,error
 16943,1975816140,@jenny2183 i could what zombie films all day ,positive,negative,0.9887,ok,
 16944,2069673921,@GDGOfficial Thanks for a great concert! Come back soon. Hope you have a nice stay here in sweden ,positive,positive,0.9996,ok,
 16945,1691125475,Word on my way to the house with the baby  i love my besties sean and teeny listening to music frexxx,positive,positive,0.9993,ok,
-16946,2059284901,@gtmacki @ace_of_hearts @bamp @hotelsantaclara chorei com a foto. ,positive,negative,0.9831,ok,
+16946,2059284901,@gtmacki @ace_of_hearts @bamp @hotelsantaclara chorei com a foto. ,positive,,,failed,"non_english: detected 'pt', P(English)=0.0060"
 16947,2050529731,"@scottrmcgrew No spammer here! LOL....I know, I go thru my followers and try to see who wants me to have a billion followers in a day ",positive,negative,0.9989,ok,
 16948,2057963022,is like it makes you hate the summer when you got a schedule like mine ,negative,negative,0.922,ok,
 16949,2296084038,I playing like crap ,negative,negative,0.9997,ok,
@@ -19185,7 +19185,7 @@ row_number,id,text,label,predicted_label,score,status,error
 19184,1792240905,"@amirk nih mir.. Get Paid to Tweet, Facebook And Comment On Blogs  http://gawker.com/5253213 #notafraidtobeservicey #craigslist",positive,negative,0.9979,ok,
 19185,2056625569,@lucysavagex lmfao at your comment to Miley  haha.,positive,negative,0.9714,ok,
 19186,2263423077,@col2k8 awk well ,negative,positive,0.6881,ok,
-19187,1969116195,@theitalianjob: funkciï¿½kkal szï¿½vjak ,positive,negative,0.9906,ok,
+19187,1969116195,@theitalianjob: funkciï¿½kkal szï¿½vjak ,positive,,,failed,"non_english: detected 'pl', P(English)=0.0019"
 19188,1759125121,Eating ice cream with my bAby    -AMBROS!ALYNN!!!,positive,positive,0.9982,ok,
 19189,2206369173,@kyute_shana not on the right comp xD and someone dissed the vamp fic so im hesitant  :'(,negative,negative,0.9996,ok,
 19190,2185498385,GREEEEEEEEEEK!!!!! I hate season finales ,negative,negative,0.9958,ok,

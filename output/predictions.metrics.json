@@ -1,12 +1,12 @@
 {
   "status": "completed",
   "run": {
-    "run_id": "6802c135a2ab",
+    "run_id": "b52e14b6c60d",
     "version": "0.1.0",
     "model": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
     "model_revision": "714eb0fa89d2f80546fda750413ed43d93601a13",
     "input": "data/uci_sentences.csv",
-    "started_at": "2026-11-03T19:13:38+00:00",
+    "started_at": "2026-11-12T17:46:38+00:00",
     "input_sha256": "d4890068e349166c1baa490352f772a82438f41e1888bf6276af9c90f873a0b0"
   },
   "rows_read": 3000,
@@ -22,8 +22,8 @@
   "low_confidence_predictions": 34,
   "batches_total": 94,
   "batch_fallbacks": 0,
-  "elapsed_seconds": 6.387,
-  "inference_seconds": 6.369,
-  "rows_per_second": 469.7,
+  "elapsed_seconds": 6.133,
+  "inference_seconds": 6.038,
+  "rows_per_second": 489.1,
   "accuracy": 0.928
 }
