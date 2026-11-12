@@ -175,3 +175,38 @@ def test_accuracy_is_computed_when_label_column_given(tmp_path, fake_model):
 
     assert metrics.summary()["accuracy"] == pytest.approx(2 / 3, abs=1e-4)
     assert "label" in read_output(config.output_path)[0]
+
+
+def test_non_english_rows_are_rejected_without_calling_model(tmp_path, fake_model):
+    write_csv(
+        tmp_path / "in.csv",
+        ["text"],
+        [["a good product"], ["Das Essen war wirklich schrecklich"], ["这个产品很好"]],
+    )
+    config = make_config(tmp_path)
+    metrics = Metrics()
+
+    run(config, lambda: fake_model, metrics)
+
+    out = read_output(config.output_path)
+    assert [r["status"] for r in out] == ["ok", "failed", "failed"]
+    assert out[1]["error"].startswith("non_english: detected 'de'")
+    assert out[2]["error"] == "non_english: text is mostly in a non-Latin script"
+    assert fake_model.calls == [["a good product"]]
+    assert metrics.summary()["failures_by_reason"] == {"non_english": 2}
+
+
+def test_language_check_can_be_disabled(tmp_path, fake_model):
+    write_csv(tmp_path / "in.csv", ["text"], [["Das Essen war wirklich schrecklich"]])
+    config = make_config(tmp_path, language_check=False)
+
+    run(config, lambda: fake_model, Metrics())
+
+    assert read_output(config.output_path)[0]["status"] == "ok"
+
+
+def test_changing_the_language_check_invalidates_a_checkpoint(tmp_path):
+    config = make_config(tmp_path)
+    assert config.fingerprint("abc") != make_config(tmp_path, language_check=False).fingerprint(
+        "abc"
+    )

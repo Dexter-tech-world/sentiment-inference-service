@@ -126,6 +126,11 @@ def parse_args(argv: list[str] | None) -> argparse.Namespace:
         action="store_true",
         help="ignore any checkpoint for this output and start from the first row",
     )
+    parser.add_argument(
+        "--no-language-check",
+        action="store_true",
+        help="classify every row, even text detected as clearly non-English",
+    )
     parser.add_argument("--model-name", default=os.environ.get("MODEL_NAME", DEFAULT_MODEL_NAME))
     parser.add_argument(
         "--model-revision", default=os.environ.get("MODEL_REVISION", DEFAULT_MODEL_REVISION)
@@ -204,6 +209,7 @@ def main(argv: list[str] | None = None) -> int:
         encoding=args.encoding,
         model_version=f"{args.model_name}@{args.model_revision}:max_length={args.max_length}",
         resume=not args.fresh,
+        language_check=not args.no_language_check,
     )
     metrics_file = args.metrics_file or args.output.with_suffix(".metrics.json")
     metrics = Metrics()

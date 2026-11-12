@@ -1,7 +1,7 @@
 """Batch inference loop.
 
-    stream rows -> window of N rows -> validate -> sort by length -> predict in
-    batches -> restore input order -> append to output -> commit checkpoint
+    stream rows -> window of N rows -> validate (incl. English check) -> sort by
+    length -> predict in batches -> restore input order -> append -> commit
 
 Invariant: every input record produces exactly one output record, with
 status "ok" or "failed", so rows_read == rows_succeeded + rows_failed.
@@ -20,8 +20,10 @@ from itertools import batched, islice
 from pathlib import Path
 
 from .csv_io import InputRow, read_rows
+from .inference import predict_with_fallback, validate_text
+from .language import EnglishDetector, default_detector
 from .metrics import EMPTY_TEXT, INFERENCE_ERROR, MALFORMED_CSV, Metrics
-from .model import Prediction, SentimentModel
+from .model import SentimentModel
 from .output import CheckpointedCsvWriter, output_lock
 
 log = logging.getLogger(__name__)
@@ -48,6 +50,9 @@ class PipelineConfig:
     encoding: str = "utf-8-sig"
     model_version: str = "unknown"  # part of the resume fingerprint
     resume: bool = True
+    # Reject clearly non-English text: the model is English-only and would
+    # otherwise return confident but meaningless predictions.
+    language_check: bool = True
     # Abort if this many batches in a row have every inference attempt fail
     # (e.g. a broken model): row-by-row fallback would be ~batch_size x slower.
     max_consecutive_failed_batches: int = 3
@@ -74,6 +79,7 @@ class PipelineConfig:
             "label_column": self.label_column,
             "encoding": self.encoding,
             "model_version": self.model_version,
+            "language_check": self.language_check,
             "fields": self.output_fieldnames(),
         }
         return hashlib.sha256(json.dumps(identity, sort_keys=True).encode()).hexdigest()
@@ -108,6 +114,7 @@ def run(
             rows = islice(rows, rows_done, None)  # re-reading is cheap next to inference
             log.info("resuming from checkpoint", extra={"fields": {"rows_committed": rows_done}})
 
+        detector = default_detector() if config.language_check else None
         model = load_model()
         metrics.started_at = time.monotonic()  # throughput excludes model load time
         breaker = _CircuitBreaker(config.max_consecutive_failed_batches)
@@ -118,7 +125,8 @@ def run(
 
         with writer.open(checkpoint):
             for window_number, window in enumerate(batched(rows, config.window_size), start=1):
-                writer.write_rows(_process_window(window, model, metrics, config, breaker))
+                records = _process_window(window, model, detector, metrics, config, breaker)
+                writer.write_rows(records)
                 rows_done += len(window)
                 writer.commit(rows_done, metrics.state())
 
@@ -159,6 +167,7 @@ class _CircuitBreaker:
 def _process_window(
     window: Sequence[InputRow],
     model: SentimentModel,
+    detector: EnglishDetector | None,
     metrics: Metrics,
     config: PipelineConfig,
     breaker: _CircuitBreaker,
@@ -170,8 +179,8 @@ def _process_window(
     for i, row in enumerate(window):
         if row.error:
             _fail(records[i], MALFORMED_CSV, row.error, metrics)
-        elif row.text is None or not row.text.strip():
-            _fail(records[i], EMPTY_TEXT, "text is empty", metrics)
+        elif rejection := validate_text(row.text, detector):
+            _fail(records[i], rejection.reason, rejection.detail, metrics)
         else:
             pending.append(i)
 
@@ -181,7 +190,7 @@ def _process_window(
     pending.sort(key=lambda i: len(window[i].text))
 
     for chunk in batched(pending, config.batch_size):
-        outcomes = _predict(model, [window[i].text for i in chunk], metrics)
+        outcomes = predict_with_fallback(model, [window[i].text for i in chunk], metrics)
         failed = 0
         for i, outcome in zip(chunk, outcomes, strict=True):
             if isinstance(outcome, Exception):
@@ -194,40 +203,6 @@ def _process_window(
             metrics.record_prediction(outcome.label, outcome.score, expected)
         breaker.record(attempted=len(chunk), failed=failed)
     return records
-
-
-def _predict(
-    model: SentimentModel, texts: list[str], metrics: Metrics
-) -> list[Prediction | Exception]:
-    """Predict the whole batch; if that fails, retry row by row to isolate bad inputs.
-
-    One poison row then costs one failed row instead of a whole failed batch.
-    """
-    start = time.perf_counter()
-    try:
-        predictions = model.predict(texts)
-        if len(predictions) != len(texts):
-            raise RuntimeError(
-                f"model returned {len(predictions)} predictions for {len(texts)} inputs"
-            )
-        metrics.record_batch(time.perf_counter() - start, fallback=False)
-        return predictions
-    except Exception:
-        log.warning(
-            "batch inference failed; retrying rows individually",
-            exc_info=True,
-            extra={"fields": {"batch_rows": len(texts)}},
-        )
-
-    outcomes: list[Prediction | Exception] = []
-    for text in texts:
-        try:
-            (prediction,) = model.predict([text])  # unpacking also enforces exactly one result
-            outcomes.append(prediction)
-        except Exception as exc:
-            outcomes.append(exc)
-    metrics.record_batch(time.perf_counter() - start, fallback=True)
-    return outcomes
 
 
 def _base_record(row: InputRow, config: PipelineConfig) -> dict:

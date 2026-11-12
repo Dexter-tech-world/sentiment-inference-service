@@ -17,8 +17,10 @@ from prometheus_client.core import CounterMetricFamily, GaugeMetricFamily, InfoM
 # Failure reasons are a fixed, small set so they are safe as Prometheus labels.
 # Exception messages go to logs and the output file, never into label values.
 EMPTY_TEXT = "empty_text"
+NON_ENGLISH = "non_english"
 MALFORMED_CSV = "malformed_csv"
 INFERENCE_ERROR = "inference_error"
+FAILURE_REASONS = (EMPTY_TEXT, NON_ENGLISH, MALFORMED_CSV, INFERENCE_ERROR)
 
 # For a binary classifier the top score is always >= 0.5; below this it is
 # close to a coin flip. A rising share of these is an early sign of drift.
@@ -146,7 +148,7 @@ class _PrometheusCollector:
         failures = CounterMetricFamily(
             "sentiment_row_failures", "Failed rows by reason", labels=["reason"]
         )
-        for reason in (EMPTY_TEXT, MALFORMED_CSV, INFERENCE_ERROR):
+        for reason in FAILURE_REASONS:
             failures.add_metric([reason], s["failures_by_reason"].get(reason, 0))
         yield failures
 
