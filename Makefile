@@ -2,7 +2,7 @@ IMAGE ?= sentiment-pipeline
 VENV ?= .venv
 PY := $(VENV)/bin/python
 
-.PHONY: install lock test test-model lint data run docker-build docker-run
+.PHONY: install lock test test-model crash-test lint data run serve docker-build docker-run docker-serve docker-test
 
 install:            ## local dev environment (needs uv)
 	uv venv --python 3.12 --allow-existing $(VENV)
@@ -20,6 +20,9 @@ test:               ## fast tests (fake model, no torch needed)
 test-model:         ## tests against the real model (downloads it once)
 	RUN_MODEL_TESTS=1 $(PY) -m pytest tests/test_model_integration.py
 
+crash-test:         ## kill -9 the pipeline three times mid-run, resume, require identical output
+	$(PY) -m pytest tests/test_crash.py -v
+
 lint:
 	$(PY) -m ruff check . && $(PY) -m ruff format --check .
 
@@ -31,6 +34,9 @@ run:
 	$(PY) -m sentiment_pipeline --input data/uci_sentences.csv --output output/predictions.csv \
 		--id-column id --label-column label --log-format text
 
+serve:              ## HTTP API on http://127.0.0.1:8080 (gunicorn)
+	$(VENV)/bin/sentiment-api --port 8080 --log-format text
+
 docker-build:
 	docker build -t $(IMAGE) .
 
@@ -39,3 +45,10 @@ docker-run:
 		-v "$$PWD/data:/data:ro" -v "$$PWD/output:/output" $(IMAGE) \
 		--input /data/uci_sentences.csv --output /output/predictions.csv \
 		--id-column id --label-column label --metrics-port 8000
+
+docker-serve:       ## HTTP API from the image on http://localhost:8080
+	docker run --rm -p 8080:8080 --entrypoint sentiment-api $(IMAGE)
+
+docker-test:        ## crash test and API smoke test against the built image
+	scripts/crash_test_docker.sh $(IMAGE)
+	scripts/api_smoke_test.sh $(IMAGE)

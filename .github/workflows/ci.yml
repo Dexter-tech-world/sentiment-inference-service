@@ -5,9 +5,15 @@ on:
     branches: [main]
   pull_request:
 
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   test:
+    name: Lint and test
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -17,6 +23,7 @@ jobs:
           cache-dependency-path: requirements-dev.txt
       - run: pip install -r requirements-dev.txt && pip install --no-deps -e .
       - run: ruff check . && ruff format --check .
+      # Includes the SIGKILL crash test (tests/test_crash.py) and the API tests.
       - run: pytest
       - name: Lockfile is in sync with requirements.in
         run: |
@@ -25,8 +32,10 @@ jobs:
           git diff --exit-code requirements.lock
 
   docker:
+    name: Docker image end-to-end
     needs: test
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
       - uses: docker/setup-buildx-action@v3
@@ -38,7 +47,7 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
-      - name: Smoke test on UCI data (end to end, real model, offline)
+      - name: Batch run on UCI data (real model, offline, read-only filesystem)
         run: |
           mkdir -p out
           docker run --rm --network none --read-only --tmpfs /tmp --user "$(id -u):$(id -g)" \
@@ -62,4 +71,12 @@ jobs:
           set -e
           test "$code" -eq 2
           test -f out/edge.csv
-          jq -e '.rows_failed == 3 and .failures_by_reason.empty_text == 2' out/edge.metrics.json
+          jq -e '.rows_failed == 4 and .failures_by_reason.empty_text == 2
+                 and .failures_by_reason.non_english == 1
+                 and .failures_by_reason.malformed_csv == 1' out/edge.metrics.json
+
+      - name: Crash test (SIGKILL + SIGTERM + resume, real model)
+        run: scripts/crash_test_docker.sh sentiment-pipeline:ci
+
+      - name: API smoke test (gunicorn, read-only filesystem)
+        run: scripts/api_smoke_test.sh sentiment-pipeline:ci
