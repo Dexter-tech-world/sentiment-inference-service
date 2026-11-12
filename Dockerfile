@@ -30,11 +30,13 @@ COPY src ./src
 RUN --mount=from=ghcr.io/astral-sh/uv:0.13.1,source=/uv,target=/bin/uv \
     uv pip install --system --no-cache --no-deps .
 
-ENV HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1
+# API_HOST: the API binds to all interfaces inside the container (default is 127.0.0.1).
+ENV HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 API_HOST=0.0.0.0
 RUN useradd --create-home --uid 1000 app && mkdir -p /data /output && chown app /output
 USER app
 
-EXPOSE 8000
+# 8000: batch job /metrics (--metrics-port). 8080: HTTP API (--entrypoint sentiment-api).
+EXPOSE 8000 8080
 # Exec form: python is PID 1 and receives SIGTERM from `docker stop` directly.
 ENTRYPOINT ["python", "-m", "sentiment_pipeline"]
 CMD ["--help"]

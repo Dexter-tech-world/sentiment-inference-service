@@ -12,6 +12,7 @@ dynamic = ["dependencies"]
 
 [project.scripts]
 sentiment-pipeline = "sentiment_pipeline.cli:main"
+sentiment-api = "sentiment_pipeline.api:main"
 
 [tool.setuptools.dynamic]
 dependencies = { file = ["requirements.in"] }
